@@ -4,11 +4,12 @@
 namespace console\controllers;
 
 
-use yii\web\Controller;
+use yii\console\Controller;
+use yii\helpers\Console;
 
 class TestController extends Controller
 {
     public function actionIndex() {
-        return '<h1>Hello, consoleworld</h1>';
+        $this->stdout('Hello, consoleworld', Console::BG_GREY, Console::FG_BLACK);
     }
 }
