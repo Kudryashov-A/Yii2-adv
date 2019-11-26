@@ -25,6 +25,9 @@ class m191125_123315_create_task_table extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer(),
         ]);
+        $this->addForeignKey('fx_task_user_1', 'task', ['executor_id'], 'user', ['id']);
+        $this->addForeignKey('fx_task_user_2', 'task', ['creator_id'], 'user', ['id']);
+        $this->addForeignKey('fx_task_user_3', 'task', ['updater_id'], 'user', ['id']);
     }
 
     /**
@@ -32,6 +35,9 @@ class m191125_123315_create_task_table extends Migration
      */
     public function safeDown()
     {
+        $this->dropForeignKey('fx_task_user_1', 'task');
+        $this->dropForeignKey('fx_task_user_2', 'task');
+        $this->dropForeignKey('fx_task_user_3', 'task');
         $this->dropTable('{{%task}}');
         return true;
     }
