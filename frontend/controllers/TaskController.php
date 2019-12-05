@@ -37,6 +37,7 @@ class TaskController extends Controller
     {
         $searchModel = new TaskSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize = 1;
 
         return $this->render('index', [
             'searchModel' => $searchModel,
