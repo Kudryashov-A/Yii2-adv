@@ -1,0 +1,28 @@
+#chat {
+    display: flex;
+}
+#chat>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+#chatMessages {
+    background-color: #40e9ff;
+    border-radius: 55px;
+    color: #b8232f;
+    padding: 25px;
+}
+#chatInput {
+    width: 200px;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+#chatButton {
+    width: 200px;
+    border-radius: 15px;
+}
+#chatButton:active {
+    background-color: #ff0014;
+    color: #ffffff;
+}
